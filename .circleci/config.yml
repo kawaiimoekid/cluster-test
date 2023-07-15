@@ -8,7 +8,8 @@ jobs:
     resource_class: kawaiimoekid/pi-test
     steps:
       - checkout
-      - run: dotnet build
+      - run:
+          command: dotnet build
 
 # Orchestrate our job run sequence
 workflows:
