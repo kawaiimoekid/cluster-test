@@ -8,11 +8,4 @@ jobs:
     resource_class: kawaiimoekid/pi-test
     steps:
       - checkout
-      - run:
-          name: Restore packages
-          command:
-            dotnet restore
-      - run:
-          name: Build
-          command:
-            dotnet build
+      - run: echo $USER
