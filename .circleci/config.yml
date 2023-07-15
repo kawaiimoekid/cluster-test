@@ -5,14 +5,13 @@ jobs:
   build:
     docker:
       - image: mcr.microsoft.com/dotnet/sdk:7.0
-    resource_class: kawaiimoekid/pi-test
     steps:
       - checkout
       - run:
-          command: dotnet build | sh
-
-# Orchestrate our job run sequence
-workflows:
-  build:
-    jobs:
-      - build
+          name: Restore packages
+          command:
+            dotnet restore
+      - run:
+          name: Build
+          command:
+            dotnet build
