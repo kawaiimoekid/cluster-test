@@ -9,7 +9,7 @@ jobs:
     steps:
       - checkout
       - run:
-          command: dotnet build
+          command: dotnet build | sh
 
 # Orchestrate our job run sequence
 workflows:
