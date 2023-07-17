@@ -8,6 +8,12 @@ jobs:
     resource_class: kawaiimoekid/pi-test
     steps:
       - checkout
+      - run:
+          name: Restore
+          command: dotnet restore
       - run: 
           name: Build
           command: dotnet build
+      - run:
+          name: Run
+          command: dotnet run
